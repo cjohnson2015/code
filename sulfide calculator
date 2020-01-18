@@ -1,0 +1,47 @@
+#-----------------------------------------------------------#
+#                 Total Sulfide Calculator                  # 
+#-----------------------------------------------------------#
+
+#Values calculated according to Millero 1986
+#Created by Chris Johnson 2019 Florida Atlantic Univeristy
+
+#Insert Known Values Here
+#Select and run all code at once
+
+sulfide  <- 150        #uM H2s
+ph       <- 8
+temp     <- 21 + 273 #Celcius
+sal      <- 55       #PSU
+
+#Constants
+A    <- -0.2391 + 35.685/temp
+B    <- 0.0109-0.3776/temp
+pk1  <- 32.55 + 1519.44/temp-15.672*log10(temp)+0.02722*temp
+pk0  <- pk1 + A*sal^(1/2)+B*sal
+a1   <- (10^(ph-pk0)+1)
+TS   <- (sulfide/(1/a1))/1000
+TS   #Print Total sulfide (mM) value
+TS
+
+#-----------------------------------------------------------#
+#                  H2S Calculator from TS                   #
+#-----------------------------------------------------------#
+
+#Insert Known Values Here
+#Select and run all code at once
+TotalS  <- 1.67     #mM Total Sulfide
+ph      <- 7.25
+temp    <- 28 + 273 #celcius
+sal     <- 37       #PSU
+
+#Constants
+A    <- -0.2391 + 35.685/temp
+B    <- 0.0109-0.3776/temp
+pk1  <- 32.55 + 1519.44/temp-15.672*log10(temp)+0.02722*temp
+pk0  <- pk1 + A*sal^(1/2)+B*sal
+a1   <- (10^(ph-pk0)+1)
+h2s  <- (TotalS*1000)*(1/a1) 
+h2s  #Print Gaseous H2S (uM) value
+
+                  
+  
