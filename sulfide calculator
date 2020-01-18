@@ -8,7 +8,7 @@
 #Insert Known Values Here
 #Select and run all code at once
 
-sulfide  <- 150        #uM H2s
+sulfide  <- 150       #uM H2s
 ph       <- 8
 temp     <- 21 + 273 #Celcius
 sal      <- 55       #PSU
